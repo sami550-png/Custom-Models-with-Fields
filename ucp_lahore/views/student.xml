@@ -1,0 +1,50 @@
+<odoo>
+    <!-- Form View -->
+    <record id="view_ucp_student_form" model="ir.ui.view">
+        <field name="name">student.form</field>
+        <field name="model">student</field>
+        <field name="arch" type="xml">
+            <form string="Student">
+                <sheet>
+                    <notebook>
+                        <page string="Student Info">
+                            <group>
+                                <field name="name"/>
+                                <field name="age"/>
+                                <field name="cnic"/>
+                                <field name="blood_group"/>
+                                <field name="email"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_ucp_student_tree" model="ir.ui.view">
+        <field name="name">student.tree</field>
+        <field name="model">student</field>
+        <field name="arch" type="xml">
+            <tree string="Student">
+                <field name="name"/>
+                <field name="age"/>
+                <field name="cnic"/>
+                <field name="blood_group"/>
+                <field name="email"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_ucp_student" model="ir.actions.act_window">
+        <field name="name">Student</field>
+        <field name="res_model">student</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menus -->
+    <menuitem id="menu_ucp_root" name="UCP"/>
+    <menuitem id="menu_ucp_student" name="Student" parent="menu_ucp_root" action="action_ucp_student"/>
+</odoo>
