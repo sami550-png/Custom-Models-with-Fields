@@ -1,0 +1,12 @@
+<odoo>
+    <record model="ir.ui.view" id="first_report_list_inherit_sami">
+        <field name="name">first_report.list.inherit.sami</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_date']" position="after">
+                <field name="sami"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
